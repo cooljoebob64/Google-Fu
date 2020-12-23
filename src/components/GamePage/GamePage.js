@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RandomFact from "../RandomFact/RandomFact";
 import WinnerSelector from "../WinnerSelector/WinnerSelector";
 
 class GamePage extends Component {
@@ -6,8 +7,11 @@ class GamePage extends Component {
     return (
       <div>
         This is the actual game!! <br />
-        <p>Here is a random fact:</p>
-        <p>What is the height of Mt Fuji in Feet?</p>
+        <br />
+        <br />
+        <RandomFact />
+        <br />
+        <br />
         <p>(Will reveal the answer here shortly!)</p>
         <WinnerSelector name={"Player 1"} />
         <span> </span>

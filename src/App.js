@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AnotherRoundButton from "./components/AnotherRoundButton";
 import Routes from "./Routes";
 import RandomFact from "./components/RandomFact/RandomFact";
+require("dotenv").config();
 
 function App() {
   const debugMode = true;
@@ -11,8 +12,6 @@ function App() {
     <div className="App">
       <h1>Google-Fu</h1>
       <Routes debug={debugMode} />
-      <AnotherRoundButton />
-      <RandomFact />
     </div>
   );
 }

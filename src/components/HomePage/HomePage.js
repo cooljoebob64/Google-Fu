@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Typical from 'react-typical';
 class HomePage extends Component {
   render() {
-    return (
+    return (<>
     <Jumbotron fluid>
     <div>
       <h1>Welcome to GOOGLE-FU!</h1>
@@ -33,8 +33,17 @@ class HomePage extends Component {
     </p>
     </div>
   </Jumbotron>
-    );
+        <Jumbotron fluid>
+        <div>
+          <h1>Welcome to GOOGLE-FU!</h1>
+          <p>TEST YOUR TRIVA KNOWLEDGE AGAINST YOUR FRIENDS!</p>
+          <p>
+            <Button href="/game">START GAME</Button>{" "}
+          </p>
+        </div>
+      </Jumbotron></>
 
+ );
   }
 }
 export default HomePage;
