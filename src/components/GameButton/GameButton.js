@@ -4,13 +4,14 @@ import Button from "react-bootstrap/Button";
 class GameButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "Not Named",
-    };
   }
 
   render() {
-    return <Button>{this.state.name}</Button>;
+    return (
+      <Button size={this.props.size} variant={this.props.variant}>
+        {this.props.name}
+      </Button>
+    );
   }
 }
 
