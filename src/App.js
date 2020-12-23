@@ -2,6 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AnotherRoundButton from "./components/AnotherRoundButton";
 import Routes from "./Routes";
+import RandomFact from "./RandomFact";
 
 function App() {
   const debugMode = true;
@@ -11,6 +12,7 @@ function App() {
       <h1>Google-Fu</h1>
       <Routes debug={debugMode} />
       <AnotherRoundButton />
+      <RandomFact />
     </div>
   );
 }
