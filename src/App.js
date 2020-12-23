@@ -4,10 +4,12 @@ import AnotherRoundButton from "./components/AnotherRoundButton";
 import Routes from "./Routes";
 
 function App() {
+  const debugMode = true;
+
   return (
     <div className="App">
       <h1>Google-Fu</h1>
-      <Routes />
+      <Routes debug={debugMode} />
       <AnotherRoundButton />
     </div>
   );

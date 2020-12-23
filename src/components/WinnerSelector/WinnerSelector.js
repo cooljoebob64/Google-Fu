@@ -15,11 +15,7 @@ class WinnerSelector extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <GameButton name={this.props.name} />
-      </div>
-    );
+    return <GameButton name={this.props.name} />;
   }
 }
 

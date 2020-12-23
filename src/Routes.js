@@ -7,10 +7,14 @@ import EndPage from "./components/EndPage/EndPage";
 import NavBar from "./components/NavBar/NavBar";
 
 class Routes extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Router>
-        <NavBar />
+        <NavBar visible={this.props.debug} />
         <hr />
         <Route name="Home" exact path="/" component={HomePage} />
         <Route name="Game" exact path="/game" component={GamePage} />
