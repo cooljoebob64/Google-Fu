@@ -5,12 +5,6 @@ class RandomFact extends Component {
     planetData: "",
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state.planetData = rand();
-  }
-
   render() {
     return (
       <div>
