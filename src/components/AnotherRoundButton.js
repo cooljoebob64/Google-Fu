@@ -5,7 +5,7 @@ class AnotherRoundButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Not Named",
+      name: "Another Round?",
     };
   }
 
