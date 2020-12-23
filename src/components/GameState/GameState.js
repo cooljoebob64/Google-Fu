@@ -3,6 +3,8 @@ import React, { Component } from "react";
 class GameState extends Component {
   state = {
     mode: "splash",
+    round: 0,
+    players: [],
   };
 
   render() {
