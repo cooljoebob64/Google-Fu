@@ -12,9 +12,9 @@ function App() {
       <h1>Google-Fu</h1>
       <GameButton />
       <AnotherRoundButton />
-      <GameButton size="lg" variant="warning" name="Start Game" />
-      <GameButton size="lg" variant="warning" name="End Game" />
-      <GameButton size="lg" variant="warning" name="Change Category" />
+      <GameButton size="lg" variant="warning" name="Start Game" margin-left/>
+      <GameButton size="lg" variant="warning" name="End Game" margin-left />
+      <GameButton size="lg" variant="warning" name="Change Category" margin-left/>
       <Routes />
     </div>
   );
