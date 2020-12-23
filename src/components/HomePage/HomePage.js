@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
 
 class HomePage extends Component {
   render() {
@@ -10,6 +11,7 @@ class HomePage extends Component {
       <p>
         TEST YOUR TRIVA KNOWLEDGE AGAINST YOUR FRIENDS!
       </p>
+      <p><Button href="#">START GAME</Button> </p>
     </div>
   </Jumbotron>
     );

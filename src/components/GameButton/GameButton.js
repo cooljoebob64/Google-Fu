@@ -7,11 +7,7 @@ class GameButton extends Component {
   }
 
   render() {
-    return (
-      <Button size={this.props.size} variant={this.props.variant}>
-        {this.props.name}
-      </Button>
-    );
+    return <Button>{this.props.name}</Button>
   }
 }
 
