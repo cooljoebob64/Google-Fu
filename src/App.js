@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <h1>Google-Fu</h1>
-      <GameButton name="Start Game" />
+      <GameButton size="lg" variant="warning" name="Start Game" />
+      <GameButton size="lg" variant="warning" name="End Game" />
+      <GameButton size="lg" variant="warning" name="Change Category" />
       <Routes />
     </div>
   );
