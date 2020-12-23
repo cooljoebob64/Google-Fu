@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <h1>Google-Fu</h1>
       <Routes debug={debugMode} />
-      <AnotherRoundButton />
     </div>
   );
 }
