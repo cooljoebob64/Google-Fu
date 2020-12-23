@@ -4,11 +4,17 @@ import HomePage from "./components/HomePage/HomePage";
 import GamePage from "./components/GamePage/GamePage";
 import LobbyPage from "./components/LobbyPage/LobbyPage";
 import EndPage from "./components/EndPage/EndPage";
+import NavBar from "./components/NavBar/NavBar";
 
 class Routes extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Router>
+        <NavBar visible={this.props.debug} />
         <hr />
         <Route name="Home" exact path="/" component={HomePage} />
         <Route name="Game" exact path="/game" component={GamePage} />
