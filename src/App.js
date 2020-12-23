@@ -8,10 +8,11 @@ function App() {
   return (
     <div className="App">
       <h1>Google-Fu</h1>
-      <AnotherRoundButton /> <br />
-      <GameButton size="lg" variant="success" name="Start Game" />
-      <GameButton size="lg" variant="warning" name="End Game" />
-      <GameButton size="lg" variant="danger" name="Change Category" />
+      <GameButton size="lg" variant="primary" name="Splash Screen" />
+      <GameButton size="lg" variant="success" name="Game Screen" />
+      <GameButton size="lg" variant="warning" name="Lobby Screen" />
+      <GameButton size="lg" variant="danger" name="End Screen" />
+      <br /> <AnotherRoundButton />
       <Routes />
     </div>
   );
