@@ -12,7 +12,6 @@ function App() {
       <h1>Google-Fu</h1>
       <Routes debug={debugMode} />
       <AnotherRoundButton />
-      <RandomFact />
     </div>
   );
 }
