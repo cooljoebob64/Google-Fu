@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AnotherRoundButton from "./components/AnotherRoundButton";
 import Routes from "./Routes";
 import RandomFact from "./components/RandomFact/RandomFact";
+require("dotenv").config();
 
 function App() {
   const debugMode = true;
