@@ -3,7 +3,8 @@ import Table from 'react-bootstrap/Table'
 
 class LobbyPage extends Component {
   render() {
-    return <div><Table striped bordered hover variant="dark">
+    return <div>
+      <Table striped bordered hover variant="dark">
     <thead>
       <tr>
         <th>#</th>

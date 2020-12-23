@@ -9,7 +9,7 @@ class GamePage extends Component {
         <p>Here is a random fact:</p>
         <p>What is the height of Mt Fuji in Feet?</p>
         <p>(Will reveal the answer here shortly!)</p>
-        <WinnerSelector name="Player 1" />
+        <WinnerSelector name={"Player 1"} />
         <span> </span>
         <WinnerSelector name="Player 2" />
         <br />
