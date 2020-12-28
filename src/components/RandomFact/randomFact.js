@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./RandomFact.css";
 
 const api_key = process.env.REACT_APP_API_KEY;
 
@@ -11,7 +12,7 @@ class RandomFact extends Component {
       isLoaded: false,
       factQuestion: "Loading question...",
       factAnswer: "Loading answer...",
-      factReveal: false,
+      factDisplay: "none",
     };
   }
 
@@ -20,20 +21,24 @@ class RandomFact extends Component {
     this.getFact();
   }
 
-  revealAnswer() {
+  answerReveal() {
     this.setState({ factReveal: true });
+  }
+
+  answerHide() {
+    this.setState({ factReveal: false });
   }
 
   async getData() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}`)
       .then((res) => {
-        console.log("Our res:");
-        console.log(res);
+        // console.log("Our res:");
+        // console.log(res);
         return res.json();
       })
       .then((json) => {
-        console.log("Our json:");
-        console.log(json);
+        // console.log("Our json:");
+        // console.log(json);
         this.setState({
           planetData: json.title,
           isLoaded: true,
@@ -51,13 +56,13 @@ class RandomFact extends Component {
   async getFact() {
     fetch(`https://opentdb.com/api.php?amount=1&type=multiple`)
       .then((res) => {
-        console.log("Our res:");
-        console.log(res);
+        // console.log("Our res:");
+        // console.log(res);
         return res.json();
       })
       .then((json) => {
-        console.log("Our json:");
-        console.log(json);
+        // console.log("Our json:");
+        // console.log(json);
         this.setState({
           factQuestion: json.results[0].question,
           factAnswer: json.results[0].correct_answer,
@@ -79,10 +84,10 @@ class RandomFact extends Component {
         <div>
           <p className="intro-text">Here is some data from a NASA API:</p>
           <p className="question-text">{this.state.planetData}</p>
-          <p className="intro-text">Here is our random fact:</p>
-          <p className="quesiton-text">{this.state.factQuestion}</p>
+          <p className="intro-text">This round's random trivia quesiton:</p>
+          <p className="question-text">{this.state.factQuestion}</p>
           <p className="intro-text">The answer:</p>
-          <p className="answer-text" display={this.state.factReveal}>
+          <p className="answer-text" visibility={this.state.factDisplay}>
             {this.state.factAnswer}
           </p>
         </div>

@@ -1,0 +1,14 @@
+.question-text {
+  font-size: 1.5em;
+  color: red;
+}
+
+.intro-text {
+  font-size: 1.5em;
+  color: blue;
+}
+
+.answer-text {
+  font-size: 2em;
+  color: green;
+}
