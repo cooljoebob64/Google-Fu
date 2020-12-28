@@ -5,6 +5,7 @@ class GameState extends Component {
     mode: "splash",
     round: 0,
     players: [],
+    answerReveal: false,
   };
 
   render() {
@@ -26,6 +27,14 @@ function startGame() {
 
 function startLobby() {
   this.state = { mode: "inLobby" };
+}
+
+function answerReveal() {
+  this.state = { answerReveal: true };
+}
+
+function answerHide() {
+  this.state = { answerReveal: false };
 }
 
 function endGame() {

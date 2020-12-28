@@ -9,13 +9,31 @@ class RandomFact extends Component {
     this.state = {
       planetData: {},
       isLoaded: false,
+      factQuestion: "Loading question...",
+      factAnswer: "Loading answer...",
+      factReveal: false,
     };
   }
 
   componentDidMount() {
+    this.getData();
+    this.getFact();
+  }
+
+  revealAnswer() {
+    this.setState({ factReveal: true });
+  }
+
+  async getData() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}`)
-      .then((res) => res.json())
+      .then((res) => {
+        console.log("Our res:");
+        console.log(res);
+        return res.json();
+      })
       .then((json) => {
+        console.log("Our json:");
+        console.log(json);
         this.setState({
           planetData: json.title,
           isLoaded: true,
@@ -29,28 +47,50 @@ class RandomFact extends Component {
         });
       });
   }
+
+  async getFact() {
+    fetch(`https://opentdb.com/api.php?amount=1&type=multiple`)
+      .then((res) => {
+        console.log("Our res:");
+        console.log(res);
+        return res.json();
+      })
+      .then((json) => {
+        console.log("Our json:");
+        console.log(json);
+        this.setState({
+          factQuestion: json.results[0].question,
+          factAnswer: json.results[0].correct_answer,
+          isLoaded: true,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          factQuestion: "Error loading!",
+          isLoaded: true,
+        });
+      });
+  }
+
   render() {
     if (this.state.isLoaded) {
       return (
         <div>
-          Here is a random fact:
-          <p>{this.state.planetData}</p>
+          <p className="intro-text">Here is some data from a NASA API:</p>
+          <p className="question-text">{this.state.planetData}</p>
+          <p className="intro-text">Here is our random fact:</p>
+          <p className="quesiton-text">{this.state.factQuestion}</p>
+          <p className="intro-text">The answer:</p>
+          <p className="answer-text" display={this.state.factReveal}>
+            {this.state.factAnswer}
+          </p>
         </div>
       );
     } else {
       return <div>Loading...</div>;
     }
   }
-}
-
-async function randomFact() {
-  let response = await fetch(
-    "https://api.nasa.gov/planetary/apod?api_key=dCwVP4suoggG17puf85Cw7iZK4rWNKzrcbRFrAc0"
-  );
-  let webData = await response.json();
-  if (webData) {
-    return webData;
-  } else return console.error("No data!");
 }
 
 export default RandomFact;
