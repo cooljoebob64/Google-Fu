@@ -6,6 +6,7 @@
 - [Technologies](#technologies)
 - [Launch](#launch)
 - [Group Members](#group-members)
+- [Screenshots](#screenshots)
 
 ## Game Description
 
@@ -41,9 +42,9 @@ This app is a group project made for [CodeSHV](https://codeshv.com/) Full-Stack 
 
 ## Screenshots
 
-![Home Screen](./public/screenshots/GF_Home.png)
-![Game Screen](./public/screenshots/GF_Game.png)
-![Lobby Screen](./public/screenshots/GF_Lobby.png)
-![Planning Document](./public/screenshots/GF_Planning-Doc.png)
-![Agile-Style Trello Board](./public/screenshots/GF_TrelloBoard.png)
-![App Wireframe](./public/screenshots/GF_Wireframe_Full.png)
+![Home Screen](./public/Screenshots/GF_Home.png)
+![Game Screen](./public/Screenshots/GF_Game.png)
+![Lobby Screen](./public/Screenshots/GF_Lobby.png)
+![Planning Document](./public/Screenshots/GF_Planning-Doc.png)
+![Agile-Style Trello Board](./public/Screenshots/GF_TrelloBoard.png)
+![App Wireframe](./public/Screenshots/GF_Wireframe_Full.png)
