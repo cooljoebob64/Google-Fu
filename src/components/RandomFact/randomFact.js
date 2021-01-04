@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import "./RandomFact.css";
 
-const api_key = process.env.REACT_APP_API_KEY;
+const api_key = process.env.REACT_APP_API_KEY; // API key storage for future development
+const api_url = "https://opentdb.com/api.php?amount=1&type=multiple"; // No API key required
 
 class RandomFact extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       planetData: {},
       isLoaded: false,
       factQuestion: "Loading question...",
       factAnswer: "Loading answer...",
-      factDisplay: "none",
+      factDisplay: props.revealed,
     };
   }
 
   componentDidMount() {
-    this.getData();
     this.getFact();
   }
 
@@ -29,40 +29,21 @@ class RandomFact extends Component {
     this.setState({ factReveal: false });
   }
 
-  async getData() {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}`)
-      .then((res) => {
-        // console.log("Our res:");
-        // console.log(res);
-        return res.json();
-      })
-      .then((json) => {
-        // console.log("Our json:");
-        // console.log(json);
-        this.setState({
-          planetData: json.title,
-          isLoaded: true,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({
-          planetData: "Error loading!",
-          isLoaded: true,
-        });
-      });
+  isLoaded() {
+    console.log(`Is the fact loaded yet? Answer: ${this.state.isLoaded}`);
   }
 
   async getFact() {
-    fetch(`https://opentdb.com/api.php?amount=1&type=multiple`)
+    this.isLoaded();
+    fetch(`${api_url}`)
       .then((res) => {
-        // console.log("Our res:");
-        // console.log(res);
+        console.log("Our res:");
+        console.log(res);
         return res.json();
       })
       .then((json) => {
-        // console.log("Our json:");
-        // console.log(json);
+        console.log("Our json:");
+        console.log(json);
         this.setState({
           factQuestion: json.results[0].question,
           factAnswer: json.results[0].correct_answer,
@@ -76,19 +57,20 @@ class RandomFact extends Component {
           isLoaded: true,
         });
       });
+    this.isLoaded();
   }
 
   render() {
     if (this.state.isLoaded) {
       return (
         <div>
-          <p className="intro-text">Here is some data from a NASA API:</p>
-          <p className="question-text">{this.state.planetData}</p>
           <p className="intro-text">This round's random trivia quesiton:</p>
           <p className="question-text">{this.state.factQuestion}</p>
           <p className="intro-text">The answer:</p>
-          <p className="answer-text" visibility={this.state.factDisplay}>
-            {this.state.factAnswer}
+          <p className="answer-text">
+            {this.state.factDisplay
+              ? this.state.factAnswer
+              : "...type your answer in chat!..."}
           </p>
         </div>
       );

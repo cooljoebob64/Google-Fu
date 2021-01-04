@@ -3,19 +3,25 @@ import RandomFact from "../RandomFact/RandomFact";
 import WinnerSelector from "../WinnerSelector/WinnerSelector";
 
 class GamePage extends Component {
+  state = { revealed: false };
+
+  handleRevealAnswer() {
+    this.setState({ revealed: true });
+  }
+
   render() {
     return (
       <div>
         This is the actual game!! <br />
         <br />
         <br />
-        <RandomFact />
+        <RandomFact revealed={this.state.revealed} />
+        <p>Reveal status: {this.state.revealed.toString()}</p>
         <br />
         <br />
-        <p>(Will reveal the answer here shortly!)</p>
-        <WinnerSelector name={"Player 1"} />
+        <WinnerSelector onClick={this.handleRevealAnswer} name={"Player 1"} />
         <span> </span>
-        <WinnerSelector name="Player 2" />
+        <WinnerSelector onClick={this.handleRevealAnswer} name="Player 2" />
         <br />
       </div>
     );
