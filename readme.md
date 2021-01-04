@@ -2,11 +2,21 @@
 
 ## Table of contents
 
+- [Group Members](#group-members)
 - [Game Description](#game-description)
 - [Technologies](#technologies)
 - [Launch](#launch)
-- [Group Members](#group-members)
 - [Screenshots](#screenshots)
+
+## Group Members
+
+- [Joseph Shields](https://github.com/JShields28) - Component styling.
+- [Steve Nicksic](https://github.com/steve-nicksic) - API call research and logic.
+- [Mey Birdson](https://github.com/MeyBirdsong) - Component styling.
+- [Jordan Mitchell](https://github.com/jiminesta) - Component styling.
+- [Joshua Luppes](https://github.com/cooljoebob64) - Product owner, React coding.
+- [Keya Daniel](https://github.com/keyadaniel) - Component styling.
+- Erickson White - Wireframe, product planning.
 
 ## Game Description
 
@@ -29,16 +39,6 @@ This app is a group project made for [CodeSHV](https://codeshv.com/) Full-Stack 
 1. Clone the project to your local machine.
 2. Run `npm install` on the project folder.
 3. Run `npm start` on the project folder, which will launch the locally-hosted web-app.
-
-## Group Members
-
-- [Joseph Shields](https://github.com/JShields28) - Component styling.
-- [Steve Nicksic](https://github.com/steve-nicksic) - API call research and logic.
-- [Mey Birdson](https://github.com/MeyBirdsong) - Component styling.
-- [Jordan Mitchell](https://github.com/jiminesta) - Component styling.
-- [Joshua Luppes](https://github.com/cooljoebob64) - Product owner, React coding.
-- [Keya Daniel](https://github.com/keyadaniel) - Component styling.
-- Erickson White - Wireframe, product planning.
 
 ## Screenshots
 
