@@ -7,7 +7,7 @@ class GameButton extends Component {
   }
 
   render() {
-    return <Button>{this.props.name}</Button>
+    return <Button>{this.props.name}</Button>;
   }
 }
 

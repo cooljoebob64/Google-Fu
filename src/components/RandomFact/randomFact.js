@@ -21,12 +21,14 @@ class RandomFact extends Component {
     this.getFact();
   }
 
-  answerReveal() {
-    this.setState({ factReveal: true });
+  componentDidUpdate(prevProps) {
+    if (prevProps.revealed !== this.props.revealed) {
+      this.setReveal(this.props.revealed);
+    }
   }
 
-  answerHide() {
-    this.setState({ factReveal: false });
+  setReveal(newReveal) {
+    this.setState({ factDisplay: newReveal });
   }
 
   isLoaded() {
@@ -66,7 +68,7 @@ class RandomFact extends Component {
         <div>
           <p className="intro-text">This round's random trivia quesiton:</p>
           <p className="question-text">{this.state.factQuestion}</p>
-          <p className="intro-text">The answer:</p>
+
           <p className="answer-text">
             {this.state.factDisplay
               ? this.state.factAnswer
