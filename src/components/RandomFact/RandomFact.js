@@ -66,7 +66,7 @@ class RandomFact extends Component {
     if (this.state.isLoaded) {
       return (
         <div>
-          <p className="intro-text">This round's random trivia quesiton:</p>
+          <p className="intro-text">This round's random trivia question:</p>
           <p className="question-text">{this.state.factQuestion}</p>
 
           <p className="answer-text">
